@@ -1,8 +1,10 @@
 body{
   margin-top: 8rem;
+  background: rgb(4,2,79);
+background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12,148,1) 22%, rgba(5,30,201,1) 46%, rgba(27,127,200,0.25271358543417366) 57%, rgba(246,3,3,1) 70%, rgba(246,3,3,1) 81%, rgba(140,4,4,0.25271358543417366) 100%);
 }
 
-.navbar{
+.navbar, .footer{
   background: rgba(247, 214, 214, 0.84);
 }
 
@@ -32,6 +34,26 @@ a {
   border-radius: 20%;
   width: 85%;
   border: 5px ridge red;
+}
+
+.imgLive-card{
+  border-radius: 20%;
+  width: 95%;
+  height: 15rem;
+  border: 5px ridge red;
+}
+
+.imgTour-card{
+  width: 100%;
+  height: 12rem;
+  border: 3px ridge red;
+  cursor: pointer;
+}
+
+.imgHome-card{
+  width: 100%;
+  height: auto;
+  border: 3px ridge red;
 }
 
 
@@ -100,6 +122,37 @@ a {
   border-radius: 30%;
   width: 3.25rem;
   height: 3.25rem;      
+}
+
+/*Footer*/
+.row {
+  --bs-gutter-x: 0;
+}
+
+.footer-links {
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.footer-links p {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: #838383;
+}
+
+.footer-links a {
+  color: #838383;
+  text-decoration: none;
+}
+
+.footer-button {
+  color: #838383 !important;
+  border-color: #838383 !important;
+}
+
+.copyright {
+  color: #838383;
+  font-size: 0.6em;
 }
 
 

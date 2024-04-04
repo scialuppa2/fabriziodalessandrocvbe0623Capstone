@@ -4,8 +4,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(4,2,79);
-background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12,148,1) 22%, rgba(5,30,201,1) 46%, rgba(27,127,200,0.25271358543417366) 57%, rgba(246,3,3,1) 70%, rgba(246,3,3,1) 81%, rgba(140,4,4,0.25271358543417366) 100%);
 }
 
 code {

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import '../App.css';
+import Spinner from './Spinner'; // Importa il componente Spinner
 
 const Cremoteca = () => {
   const [songs, setSongs] = useState([]);
   const [currentPreview, setCurrentPreview] = useState(null);
   const [currentPlayingIndex, setCurrentPlayingIndex] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [loading, setLoading] = useState(true); // Aggiungi lo stato per gestire il caricamento
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +25,7 @@ const Cremoteca = () => {
         
         const data = await response.json();
         setSongs(data.data);
+        setLoading(false); // Imposta lo stato del caricamento su false quando i dati sono stati caricati
       } catch (error) {
         console.error('Errore durante il recupero dei dati:', error);
       }
@@ -79,39 +81,43 @@ const Cremoteca = () => {
     <div>
       <h1 className="text-center">Cremoteca</h1>
       <div className="container">
-        <div className="row">
-          {songs.map((song, index) => (
-            <div key={index} className="col-sm-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
-              <div style={{ width: '20rem', height: '32rem' }} className="card">
-                <div className='d-flex align-items-center justify-content-center my-2'>
-                  <img src={song.album.cover_medium} className="card-img-top img-fluid img-card"  alt={song.album.title} />
-                </div>
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <h6 className="card-title">{song.title}</h6>
-                  <div className="prog" id={`prog-bar-${index}`} onClick={(event) => handleProgressClick(event, index)}>
-                    <div className="prog-time">
-                      <p className="left">0:00</p>
-                      <p className="right">0:30</p>
-                    </div>
-                    <div className="prog-bar">
-                      <div className="prog-bar-inner"></div>
-                    </div>
+        {loading ? (
+          <Spinner /> // Mostra lo spinner durante il caricamento dei dati
+        ) : (
+          <div className="row">
+            {songs.map((song, index) => (
+              <div key={index} className="col-sm-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
+                <div style={{ width: '20rem', height: '32rem' }} className="card">
+                  <div className='d-flex align-items-center justify-content-center my-2'>
+                    <img src={song.album.cover_medium} className="card-img-top img-fluid img-card"  alt={song.album.title} />
                   </div>
-                  <ul className="player">
-                    <button className="button button-lg" onClick={() => handlePlayPause(index)}>
-                      <i className={`fas fa-${currentPlayingIndex === index && isPlaying ? 'pause' : 'play'} fa-lg`} aria-hidden="true"></i>
-                      <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
-                    </button>
-                  </ul>
+                  <div className="card-body d-flex flex-column justify-content-between">
+                    <h6 className="card-title">{song.title}</h6>
+                    <div className="prog" id={`prog-bar-${index}`} onClick={(event) => handleProgressClick(event, index)}>
+                      <div className="prog-time">
+                        <p className="left">0:00</p>
+                        <p className="right">0:30</p>
+                      </div>
+                      <div className="prog-bar">
+                        <div className="prog-bar-inner"></div>
+                      </div>
+                    </div>
+                    <ul className="player">
+                      <button className="button button-lg" onClick={() => handlePlayPause(index)}>
+                        <i className={`fas fa-${currentPlayingIndex === index && isPlaying ? 'pause' : 'play'} fa-lg`} aria-hidden="true"></i>
+                        <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
+                      </button>
+                    </ul>
+                  </div>
                 </div>
+                <audio id={`audio-${index}`} controls style={{ display: 'none' }}>
+                  <source src={song.preview} type="audio/mpeg" />
+                  Il tuo browser non supporta l'elemento audio.
+                </audio>
               </div>
-              <audio id={`audio-${index}`} controls style={{ display: 'none' }}>
-                <source src={song.preview} type="audio/mpeg" />
-                Il tuo browser non supporta l'elemento audio.
-              </audio>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

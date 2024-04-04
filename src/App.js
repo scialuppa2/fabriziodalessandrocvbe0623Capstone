@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import News from './components/News';
 import Cremoteca from './components/Cremoteca';
 import MyNavbar from './components/MyNavbar';
-import TourStadi2022 from './components/TourStadi2022';
+import MyFooter from './components/MyFooter';
+import Live from './components/Live';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -11,16 +13,17 @@ function App() {
       <div className="App">
         <MyNavbar />
         <Routes>
+          <Route path="/home" element={<Home />} /> {/* Aggiungi questa route per la Home */}
           <Route path="/news" element={<News />} />
           <Route path="/cremoteca" element={<Cremoteca />} />
-          <Route path="/live" element={<TourStadi2022 />} />
+          <Route path="/live" element={<Live />} />
 
           {/* Altre route */}
         </Routes>
+        <MyFooter />
       </div>
     </Router>
   );
 }
 
 export default App;
-
