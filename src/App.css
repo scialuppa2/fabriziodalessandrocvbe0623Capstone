@@ -1,29 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 body{
+  font-family: "Noto Serif", serif;
   margin-top: 8rem;
   background: rgb(4,2,79);
 background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12,148,1) 22%, rgba(5,30,201,1) 46%, rgba(27,127,200,0.25271358543417366) 57%, rgba(246,3,3,1) 70%, rgba(246,3,3,1) 81%, rgba(140,4,4,0.25271358543417366) 100%);
 }
 
-.navbar, .footer{
+.navbar, .footer, .modal{
   background: rgba(247, 214, 214, 0.84);
 }
 
 .logo-img {
-  width: 180px;
+  width: 150px;
   height: auto;
 }
 
-h1{
-  font-size: 48px;
-  color: azure;
-  margin: 1em;
+/* Home */
+.cover{
+  background-image: url(/public/Since1999_Home.png);
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  background-position: center center;
+  background-size: cover;
+  margin: 0;
+  padding: 15px;
 }
+.cover *{
+  color: white;
+}
+
+h1, h2{
+  color: azure;
+  text-shadow: 2px 2px 2px black;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+h1{
+  font-size: 56px;
+}
+h2{
+  font-size: 36px;
+}
+
+
 a {
   text-decoration: none;
+}
+a:hover{
+  color: inherit;
 }
 
 .card{
   background-color: #0204096d;
+  box-shadow: 3px 3px 3px black;
+  border-radius: 5%;
+  color: azure;
+  text-align: center;
+}
+
+.social-links p{
+  font-size: 22px;
+  color: azure;
+  text-shadow: 2px 2px 2px black;
+  margin: 1rem;
+}
+
+.social-logo:hover{
+  transform: translate3d(0, 3px, 0);
+}
+
+/*Modale*/
+.modal-content{
+  background-color: #020c23ec;
   box-shadow: 3px 3px 3px black;
   border-radius: 5%;
   color: azure;
@@ -41,6 +94,7 @@ a {
   width: 95%;
   height: 15rem;
   border: 5px ridge red;
+  cursor: pointer;
 }
 
 .imgTour-card{
@@ -54,8 +108,8 @@ a {
   width: 100%;
   height: auto;
   border: 3px ridge red;
+  box-shadow: 3px 3px 3px black;
 }
-
 
 .prog {
   padding: 10px 0;
@@ -111,6 +165,11 @@ a {
           inset -6px -6px 12px rgba(5, 5, 124, 0.888),
           2px 2px 2px black
 }
+.button:hover{
+  color: azure;
+  text-decoration: none;
+  transform: translate3d(0, 2px, 0);
+}
 
 .button-nws{
   color: black;
@@ -122,6 +181,12 @@ a {
   border-radius: 30%;
   width: 3.25rem;
   height: 3.25rem;      
+}
+
+.regClass{
+  font-size: 18px;
+  color: azure;
+  text-shadow: 1px 1px 1px black;
 }
 
 /*Footer*/

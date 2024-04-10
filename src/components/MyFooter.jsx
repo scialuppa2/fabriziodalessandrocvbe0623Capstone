@@ -18,16 +18,6 @@ const MyFooter = () => (
                             <Col xs={12} className="footer-links">
                                 <p>
                                     <a href="/" alt="footer link">
-                                        Media Center
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href="/" alt="footer link">
-                                        Privacy
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href="/" alt="footer link">
                                         Contact us
                                     </a>
                                 </p>
@@ -37,11 +27,6 @@ const MyFooter = () => (
                     <Col>
                         <Row>
                             <Col xs={12} className="footer-links">
-                                <p>
-                                    <a href="/" alt="footer link">
-                                        Investor Relations
-                                    </a>
-                                </p>
                                 <p>
                                     <a href="/" alt="footer link">
                                         Legal Notices
@@ -55,17 +40,7 @@ const MyFooter = () => (
                             <Col xs={12} className="footer-links">
                                 <p>
                                     <a href="/" alt="footer link">
-                                        Help Center
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href="/" alt="footer link">
                                         Jobs
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href="/" alt="footer link">
-                                        Cookie Preferences
                                     </a>
                                 </p>
                             </Col>
@@ -74,11 +49,6 @@ const MyFooter = () => (
                     <Col>
                         <Row>
                             <Col xs={12} className="footer-links">
-                                <p>
-                                    <a href="/" alt="footer link">
-                                        Terms of Use
-                                    </a>
-                                </p>
                                 <p>
                                     <a href="/" alt="footer link">
                                         Corporate Information

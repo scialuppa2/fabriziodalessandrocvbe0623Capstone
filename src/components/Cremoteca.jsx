@@ -77,6 +77,14 @@ const Cremoteca = () => {
     audio.currentTime = seekTime;
   };
 
+  // Funzione per tornare all'inizio della pagina
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div>
       <h1 className="text-center">Cremoteca</h1>
@@ -118,6 +126,10 @@ const Cremoteca = () => {
             ))}
           </div>
         )}
+      </div>
+      {/* Torna su */}
+      <div className="scroll-to-top d-flex justify-content-center">
+        <button className='button' onClick={scrollToTop}>Torna su</button>
       </div>
     </div>
   );

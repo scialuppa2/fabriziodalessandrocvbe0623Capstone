@@ -38,7 +38,10 @@ const News = () => {
               <Col key={index} xs={12} md={6} lg={4} className="d-flex justify-content-center">
                 <Card style={{ width: '20rem', marginBottom: '32px' }} className="text-light d-flex justify-content-between">
                   <div className='d-flex align-items-center justify-content-center my-2'>
-                    <Card.Img variant="top" src={article.image} className="imgLive-card img-fluid" />
+                    <a href={article.url} target="_blank" rel="noopener noreferrer">
+                      <Card.Img variant="top" src={article.image} className="imgLive-card img-fluid" />
+                    </a>
+
                   </div>
                   <Card.Body>
                     <Card.Title>{article.title}</Card.Title>

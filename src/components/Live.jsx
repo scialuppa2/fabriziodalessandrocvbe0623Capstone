@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import TourStadi2022 from './TourStadi2022';
 import TourIndoor2022 from './TourIndoor2022';
 
 const Live = () => {
   const [selectedTour, setSelectedTour] = useState(null);
+  const selectedTourRef = useRef(null);
 
   const handleTourSelection = (tourType) => {
     setSelectedTour(tourType);
   };
+
+  useEffect(() => {
+    // Se c'è una selezione e l'elemento DOM del componente selezionato esiste
+    if (selectedTour && selectedTourRef.current) {
+      // Scorrere all'inizio dell'elemento del componente selezionato
+      selectedTourRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedTour]);
 
   return (
     <div className="container">
@@ -33,7 +42,7 @@ const Live = () => {
         </div>
       </div>
       {/* Mostra il componente selezionato in base al tour scelto */}
-      <div className="col-md-12 mt-4">
+      <div className="col-md-12 mt-4" ref={selectedTourRef}>
         {selectedTour === 'stadi' && <TourStadi2022 />}
         {selectedTour === 'indoor' && <TourIndoor2022 />}
       </div>

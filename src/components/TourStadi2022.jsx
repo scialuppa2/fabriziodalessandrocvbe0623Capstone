@@ -5,6 +5,8 @@ import Spinner from './Spinner'; // Importa il componente Spinner
 function TourStadi2022() {
   const [tourStadi, setTourStadi] = useState([]);
   const [loading, setLoading] = useState(true); // Aggiungi lo stato per gestire il caricamento
+  const [modalData, setModalData] = useState(null); // Stato per i dati del modale
+  const [modalOpen, setModalOpen] = useState(false); // Stato per gestire l'apertura e la chiusura del modale
 
   useEffect(() => {
     axios.get('https://localhost:44314/api/TourStadi2022')
@@ -18,10 +20,58 @@ function TourStadi2022() {
       });
   }, []);
 
+  // Funzione per aprire il modale e impostare i dati del modale
+  const openModal = (data) => {
+    setModalData(data);
+    setModalOpen(true);
+    console.log("Modal aperto. Stato modalOpen:", modalOpen);
+  };
+
+  // Funzione per chiudere il modale
+  const closeModal = () => {
+    setModalOpen(false);
+    console.log("Modal chiuso. Stato modalOpen:", modalOpen);
+  };
+
+  // Funzione per tornare all'inizio della pagina
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+
   // Mostra lo spinner durante il caricamento dei dati
   if (loading) {
     return <Spinner />;
   }
+
+  // Modale
+  const renderModal = () => {
+    if (modalOpen && modalData) {
+      return (
+        <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{modalData.Title}</h5>
+                <button type="button" className="close button" onClick={closeModal} aria-label="Close">
+                  <span aria-hidden="true">X</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <img src={modalData.ImageURL} alt="Concert" style={{ maxWidth: '100%', maxHeight: '400px' }} />
+                <p>"{modalData.Description}"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return null; // Se il modale non è aperto o non ci sono dati, non renderizzare nulla
+    }
+  };
 
   return (
     <div>
@@ -30,25 +80,30 @@ function TourStadi2022() {
         <div className="row">
           {tourStadi.map(tour => (
             <div key={tour.ConcertID} className="col-sm-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
-              <div style={{ width: '20rem', height: '32rem' }} className="card">
+              <div style={{ width: '20rem', height: '24rem' }} className="card" onClick={() => openModal(tour)}>
                 <div className='d-flex align-items-center justify-content-center my-2'>
                   <img src={tour.ImageURL} className="card-img-top img-fluid imgLive-card" alt="Concert" />
                 </div>
                 <div className="card-body d-flex flex-column justify-content-around">
                   <div>
                     <h5 className="card-title">{tour.Title}</h5>
-                    <p className="card-text">{new Date(tour.Date).toLocaleDateString()}</p>
-                    <p className="card-text">{tour.Location}</p>
+                    <p className="card-text">{new Date(tour.Date).toLocaleDateString()} - {tour.Location}</p>
                   </div>
-                  <p className="card-text">{tour.Description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {/* Modale */}
+      {renderModal()}
+      {/* Torna su */}
+      <div className="scroll-to-top d-flex justify-content-center">
+        <button className='button' onClick={scrollToTop}>Torna su</button>
+      </div>
     </div>
   );
+
 }
 
 export default TourStadi2022;
