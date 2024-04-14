@@ -12,9 +12,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  console.log("Stato di autenticazione:", isLoggedIn); // Controlla il valore di isLoggedIn
-
-
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       {children}

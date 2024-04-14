@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Spinner from './Spinner'; // Importa il componente Spinner
+import Spinner from './Spinner';
 
 function TourIndoor2022() {
   const [tourIndoor, setTourIndoor] = useState([]);

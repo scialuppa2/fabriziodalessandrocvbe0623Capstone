@@ -23,7 +23,6 @@ function MyNavbar() {
     navigate('/login');
   };
 
-  console.log(isLoggedIn)
   return (
     <nav className="navbar navbar-expand-md fixed-top p-0">
       <div className="container">
@@ -43,6 +42,12 @@ function MyNavbar() {
                 </li>
                 <li className="nav-item">
                   <Link to="/cremoteca" className="nav-link">Cremoteca</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/eventi" className="nav-link">Eventi</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/quiz" className="nav-link">Quiz</Link>
                 </li>
               </>
             )}

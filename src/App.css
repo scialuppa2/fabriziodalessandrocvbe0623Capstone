@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
   font-family: "Noto Serif", serif;
   margin-top: 8rem;
-  background: rgb(4,2,79);
-background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12,148,1) 22%, rgba(5,30,201,1) 46%, rgba(27,127,200,0.25271358543417366) 57%, rgba(246,3,3,1) 70%, rgba(246,3,3,1) 81%, rgba(140,4,4,0.25271358543417366) 100%);
+  background: rgb(4, 2, 79);
+  background: linear-gradient(253deg, rgba(4, 2, 79, 0.720500700280112) 0%, rgba(2, 12, 148, 1) 22%, rgba(5, 30, 201, 1) 46%, rgba(27, 127, 200, 0.25271358543417366) 57%, rgba(246, 3, 3, 1) 70%, rgba(246, 3, 3, 1) 81%, rgba(140, 4, 4, 0.25271358543417366) 100%);
 }
 
-.navbar, .footer, .modal{
+.navbar,
+.footer,
+.modal {
   background: rgba(247, 214, 214, 0.84);
 }
 
@@ -17,7 +19,7 @@ background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12
 }
 
 /* Home */
-.cover{
+.cover {
   background-image: url(/public/Since1999_Home.png);
   min-height: 400px;
   width: 100%;
@@ -30,20 +32,24 @@ background: linear-gradient(253deg, rgba(4,2,79,0.720500700280112) 0%, rgba(2,12
   margin: 0;
   padding: 15px;
 }
-.cover *{
+
+.cover * {
   color: white;
 }
 
-h1, h2{
+h1,
+h2 {
   color: azure;
   text-shadow: 2px 2px 2px black;
   margin: 10px;
   margin-bottom: 20px;
 }
-h1{
+
+h1 {
   font-size: 56px;
 }
-h2{
+
+h2 {
   font-size: 36px;
 }
 
@@ -51,11 +57,12 @@ h2{
 a {
   text-decoration: none;
 }
-a:hover{
+
+a:hover {
   color: inherit;
 }
 
-.card{
+.card {
   background-color: #0204096d;
   box-shadow: 3px 3px 3px black;
   border-radius: 5%;
@@ -63,19 +70,19 @@ a:hover{
   text-align: center;
 }
 
-.social-links p{
+.social-links p {
   font-size: 22px;
   color: azure;
   text-shadow: 2px 2px 2px black;
   margin: 1rem;
 }
 
-.social-logo:hover{
+.social-logo:hover {
   transform: translate3d(0, 3px, 0);
 }
 
 /*Modale*/
-.modal-content{
+.modal-content {
   background-color: #020c23ec;
   box-shadow: 3px 3px 3px black;
   border-radius: 5%;
@@ -83,13 +90,13 @@ a:hover{
   text-align: center;
 }
 
-.img-card{ 
+.img-card {
   border-radius: 20%;
   width: 85%;
   border: 5px ridge red;
 }
 
-.imgLive-card{
+.imgLive-card {
   border-radius: 20%;
   width: 95%;
   height: 15rem;
@@ -97,14 +104,21 @@ a:hover{
   cursor: pointer;
 }
 
-.imgTour-card{
+.imgTour-card {
   width: 100%;
   height: 12rem;
   border: 3px ridge red;
   cursor: pointer;
 }
+.imgEvent-card{
+  width: 100%;
+  height: 16rem;
+  border: 3px ridge red;
+  cursor: pointer;
+  border-radius: 10%;
+}
 
-.imgHome-card{
+.imgHome-card {
   width: 100%;
   height: auto;
   border: 3px ridge red;
@@ -114,6 +128,7 @@ a:hover{
 .prog {
   padding: 10px 0;
 }
+
 .prog-time {
   padding: 3px 5px;
   color: var(--prog);
@@ -121,7 +136,8 @@ a:hover{
   display: flex;
   justify-content: space-between;
 }
-.prog-time > p {
+
+.prog-time>p {
   font-size: 0.65rem;
 }
 
@@ -132,8 +148,8 @@ a:hover{
   border-radius: 25px;
 
   background: rgba(225, 223, 223, 0.836);
-  box-shadow:  3px 3px 3px #f53b3b, 
-              -3px -3px 3px #f53b3b;
+  box-shadow: 3px 3px 3px #f53b3b,
+    -3px -3px 3px #f53b3b;
 
 }
 
@@ -161,17 +177,18 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 6px 6px 12px #f53b3b, 
-          inset -6px -6px 12px rgba(5, 5, 124, 0.888),
-          2px 2px 2px black
+  box-shadow: inset 6px 6px 12px #f53b3b,
+    inset -6px -6px 12px rgba(5, 5, 124, 0.888),
+    2px 2px 2px black
 }
-.button:hover{
+
+.button:hover {
   color: azure;
   text-decoration: none;
   transform: translate3d(0, 2px, 0);
 }
 
-.button-nws{
+.button-nws {
   color: black;
   width: 10rem;
   height: 3rem;
@@ -180,10 +197,10 @@ a:hover{
 .button-lg {
   border-radius: 30%;
   width: 3.25rem;
-  height: 3.25rem;      
+  height: 3.25rem;
 }
 
-.regClass{
+.regClass {
   font-size: 18px;
   color: azure;
   text-shadow: 1px 1px 1px black;
@@ -226,14 +243,20 @@ a:hover{
   0% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
 }
 
 @keyframes rolling-disk {
-  0%      {transform: rotate(0);}
-  100%    {transform: rotate(1turn);}
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 
@@ -262,7 +285,122 @@ a:hover{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/*Eventi*/
+.design-section {
+  background-color: #0b002580;
+  color: azure;
+  padding: 40px;
+}
+
+.custom-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+}
+.reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+@media screen and (max-width: 700px) {
+  .timeline-item, .reverse {
+    flex-direction: column;
+  }
+}
+
+
+.timeline-content {
+  width: 28em;
+  height: auto;
+  background: #1f1f1f;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  border-radius: 5px;
+  color: white;
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  margin: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+@media screen and (max-width: 400px) {
+  .timeline-content {
+    width: 18em;
+  }
+  .design-section{
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .timeline-content {
+    width: 22em;
+  }
+  .design-section{
+    padding: 20px;
+  }
+}
+
+.date-square {
+  display: flex;
+  align-items: center;
+}
+
+.data-box {
+  font-size: 32px;
+  box-shadow: inset 6px 6px 12px #f53b3b,
+    inset -6px -6px 12px rgba(5, 5, 124, 0.888),
+    2px 2px 2px black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*Quiz*/
+.react-quiz-container{
+  width: 24em;
+  height: auto;
+  background: #1f1f1f;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  border-radius: 5px;
+  color: azure;
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  margin: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+.startQuizBtn{
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 6px 6px 12px #f53b3b,
+    inset -6px -6px 12px rgba(5, 5, 124, 0.888),
+    2px 2px 2px black
+}
+.startQuizBtn:hover {
+  text-decoration: none;
+  transform: translate3d(0, 2px, 0);
+}
+
+.questionWrapper img{
+  width: 20em !important;
+  height: auto !important;
+  border: 3px ridge red;
+}
+
+.tag-container span{
+  display: none;
+}
+
+.answerBtn, .nextQuestionBtn{
+  color: azure;
 }

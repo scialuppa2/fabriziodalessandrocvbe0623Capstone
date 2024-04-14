@@ -9,6 +9,9 @@ import Login from './components/Login';
 import News from './components/News';
 import Cremoteca from './components/Cremoteca';
 import Live from './components/Live';
+import Eventi from './components/Eventi';
+import MyQuiz from './components/Quiz';
+import { quiz } from './quizData';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Stato per l'autenticazione
@@ -41,6 +44,14 @@ function App() {
             <Route
               path="/cremoteca"
               element={isLoggedIn ? <Cremoteca /> : <Navigate to="/login" replace />}
+            />
+            <Route
+              path="/eventi"
+              element={isLoggedIn ? <Eventi /> : <Navigate to="/login" replace />}
+            />
+            <Route
+              path="/quiz"
+              element={isLoggedIn ? <MyQuiz quizData={quiz} /> : <Navigate to="/login" replace />}
             />
 
           </Routes>
