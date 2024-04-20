@@ -15,7 +15,7 @@ const News = () => {
           throw new Error('Errore nel caricamento delle notizie');
         }
         const data = await response.json();
-        setNews(data.articles.slice(0, 9));
+        setNews(data.articles.slice(0, 10));
       } catch (error) {
         console.error(error);
       } finally {
@@ -35,22 +35,27 @@ const News = () => {
         <div className="container mt-5">
           <Row>
             {news.map((article, index) => (
-              <Col key={index} xs={12} md={6} lg={4} className="d-flex justify-content-center">
-                <Card style={{ width: '20rem', marginBottom: '32px' }} className="text-light d-flex justify-content-between">
-                  <div className='d-flex align-items-center justify-content-center my-2'>
-                    <a href={article.url} target="_blank" rel="noopener noreferrer">
-                      <Card.Img variant="top" src={article.image} className="imgLive-card img-fluid" />
-                    </a>
+              <Col key={index} xs={12} md={6} className="d-flex justify-content-center">
+                <Card style={{ width: '28rem', height: '16rem' }} className="text-light m-5">
+                  <div className="row g-0">
+                    <div className="col-md-6">
 
-                  </div>
-                  <Card.Body>
-                    <Card.Title>{article.title}</Card.Title>
-                    <Card.Text>{article.description}</Card.Text>
-                  </Card.Body>
-                  <div className='d-flex justify-content-center my-3'>
-                    <Button className='button button-nws' variant="primary" href={article.url} target="_blank" rel="noopener noreferrer">Leggi</Button>
+                      <a href={article.url} target="_blank" rel="noopener noreferrer">
+                        <Card.Img variant="top" src={article.image} className="imgNws-card img-fluid" />
+                      </a>
+
+                    </div>
+                    <div className="col-md-6">
+                      <div className="card-body">
+                        <Card.Title>{article.title}</Card.Title>
+                        <div className='d-flex justify-content-center m-4'>
+                          <Button className='btn button' href={article.url} target="_blank" rel="noopener noreferrer">Leggi</Button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Card>
+
               </Col>
             ))}
           </Row>

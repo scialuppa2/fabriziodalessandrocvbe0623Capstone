@@ -55,7 +55,7 @@ function TourIndoor2022() {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">{modalData.Title}</h5>
-                <button type="button" className="close button" onClick={closeModal} aria-label="Close">
+                <button type="button" className="close btn button" onClick={closeModal} aria-label="Close">
                   <span aria-hidden="true">X</span>
                 </button>
               </div>
@@ -98,7 +98,7 @@ function TourIndoor2022() {
       {renderModal()}
       {/* Torna su */}
       <div className="scroll-to-top d-flex justify-content-center">
-        <button className='button' onClick={scrollToTop}>Torna su</button>
+        <button className='btn button' onClick={scrollToTop}>Torna su</button>
       </div>
     </div>
   );

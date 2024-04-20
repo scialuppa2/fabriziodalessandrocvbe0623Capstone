@@ -43,7 +43,7 @@ const MyQuiz = ({ quizData }) => {
             {/* Calcola la percentuale di risposte corrette solo se i risultati sono disponibili */}
             <p>Percentuale di risposte corrette: {quizResults.numberOfQuestions !== 0 ? ((quizResults.numberOfCorrectAnswers / quizResults.numberOfQuestions) * 100).toFixed(2) : 0}%</p>
             {/* Aggiungi altre informazioni o suggerimenti qui */}
-            <button className='button' onClick={handleRestartQuiz}>Restart Quiz</button>
+            <button className='btn button' onClick={handleRestartQuiz}>Restart Quiz</button>
           </div>
         )}
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Spinner from './Spinner'; // Importa il componente Spinner
+import Spinner from './Spinner';
 
 const Cremoteca = () => {
   const [songs, setSongs] = useState([]);
@@ -22,10 +22,11 @@ const Cremoteca = () => {
         if (!response.ok) {
           throw new Error('Errore nella richiesta');
         }
-        
+
+        // Imposta lo stato del caricamento su false quando i dati sono stati caricati
+        setLoading(false);
         const data = await response.json();
         setSongs(data.data);
-        setLoading(false); // Imposta lo stato del caricamento su false quando i dati sono stati caricati
       } catch (error) {
         console.error('Errore durante il recupero dei dati:', error);
       }
@@ -95,24 +96,20 @@ const Cremoteca = () => {
           <div className="row">
             {songs.map((song, index) => (
               <div key={index} className="col-sm-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
-                <div style={{ width: '20rem', height: '32rem' }} className="card">
+                <div style={{ width: '16rem', height: '26rem' }} className="card">
                   <div className='d-flex align-items-center justify-content-center my-2'>
-                    <img src={song.album.cover_medium} className="card-img-top img-fluid img-card"  alt={song.album.title} />
+                    <img src={song.album.cover_medium} className="card-img-top img-fluid img-card" alt={song.album.title} />
                   </div>
                   <div className="card-body d-flex flex-column justify-content-between">
                     <h6 className="card-title">{song.title}</h6>
                     <div className="prog" id={`prog-bar-${index}`} onClick={(event) => handleProgressClick(event, index)}>
-                      <div className="prog-time">
-                        <p className="left">0:00</p>
-                        <p className="right">0:30</p>
-                      </div>
                       <div className="prog-bar">
                         <div className="prog-bar-inner"></div>
                       </div>
                     </div>
                     <ul className="player">
-                      <button className="button button-lg" onClick={() => handlePlayPause(index)}>
-                        <i className={`fas fa-${currentPlayingIndex === index && isPlaying ? 'pause' : 'play'} fa-lg`} aria-hidden="true"></i>
+                      <button className="button-lg" onClick={() => handlePlayPause(index)}>
+                        <i className={`fas fa-${currentPlayingIndex === index && isPlaying ? 'pause' : 'play'} fa-sm`} aria-hidden="true"></i>
                         <span className="sr-only">{isPlaying ? 'Pause' : 'Play'}</span>
                       </button>
                     </ul>

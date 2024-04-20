@@ -124,7 +124,7 @@ const Registration = () => {
           Registrazione avvenuta con successo! Ora puoi accedere.
         </div>
       )}
-      <div className='container d-flex justify-content-evenly'>
+      <div className='login'>
       <div className='d-flex flex-column'>
       <h2>Registrazione</h2>
       <form onSubmit={handleSubmit}>
@@ -188,12 +188,12 @@ const Registration = () => {
           />
           {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
         </div>
-        <button className='button m-2' type="submit">Registrati</button>
+        <button className='btn button m-3' type="submit">Registrati</button>
       </form>
       </div>
-      <div className='d-flex flex-column justify-content-center'>
+      <div className='logToReg'>
       <p className='regClass'>Sei già registrato?</p>
-      <Link className='regClass button button-nws' to="/login">Accedi qui</Link>
+      <Link className='regClass btn button' to="/login">Accedi qui</Link>
       </div>
       </div>
     </div>

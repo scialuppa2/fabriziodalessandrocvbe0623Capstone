@@ -38,8 +38,8 @@ const Login = () => {
 
 
   return (
-    <div className='container d-flex justify-content-evenly'>
-      <div className='d-flex flex-column'>
+    <div className='login'>
+      <div className='d-flex flex-column p-3'>
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className='m-2'>
@@ -62,12 +62,12 @@ const Login = () => {
               required
             />
           </div>
-          <button className='button m-2' type="submit">Login</button>
+          <button className='btn button m-3' type="submit">Login</button>
         </form>
       </div>
-      <div className='d-flex flex-column justify-content-center'>
+      <div className='logToReg'>
         <p className='regClass'>Non sei ancora registrato?</p>
-        <Link className='regClass button button-nws' to="/registration">Registrati qui</Link>
+        <Link className='regClass btn button' to="/registration">Registrati qui</Link>
       </div>
     </div>
   );

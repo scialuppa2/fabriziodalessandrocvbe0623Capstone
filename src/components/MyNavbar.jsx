@@ -24,7 +24,7 @@ function MyNavbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-md fixed-top p-0">
+    <nav className="navbar navbar-dark navbar-expand-md p-0">
       <div className="container">
         <Link to="/home" className="navbar-brand">
           <img src="/logo_since1999.png" alt="Logo del Brand" className="logo-img" />
@@ -54,9 +54,11 @@ function MyNavbar() {
           </ul>
         </div>
         <div className='d-flex'>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span className="navbar-toggler-icon"></span>
+</button>
+
+
           {isLoggedIn ? (
             <button onClick={handleLogout} className="btn button">Logout</button>
           ) : (

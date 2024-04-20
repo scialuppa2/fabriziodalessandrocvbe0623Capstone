@@ -30,7 +30,7 @@ const SocialLinks = () => {
           <div className='d-flex align-items-center justify-content-evenly'>
             <SocialLink
               url="https://www.tiktok.com/@cesarecremonini_fanpage?_t=8ZPSzzK8HTR&_r=1"
-              icon="icons8-tiktok-94.png"
+              icon="icons8-tiktok-100.png"
               alt="TikTok"
             />
             <p>TikTok</p>
