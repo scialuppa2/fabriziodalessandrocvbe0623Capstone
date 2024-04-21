@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+import React, { useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthContext } from './context/AuthContext';
 import MyNavbar from './components/MyNavbar';
 import MyFooter from './components/MyFooter';
 import Home from './components/Home';
@@ -14,48 +14,35 @@ import MyQuiz from './components/Quiz';
 import { quiz } from './quizData';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Stato per l'autenticazione
-
-  useEffect(() => {
-    // Verifica se il token di accesso è presente nel localStorage
-    if (localStorage.getItem('accessToken')) {
-      setIsLoggedIn(true); // Imposta isLoggedIn a true se il token è presente
-    }
-  }, []);
+  const { isLoggedIn } = useContext(AuthContext); // Ottenere lo stato di autenticazione dal contesto
 
   return (
     <Router>
       <div className="App">
-        <AuthProvider>
-        <MyNavbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/news"
-              element={isLoggedIn ? <News /> : <Navigate to="/login" replace />}
-            />
-            <Route
-              path="/live"
-              element={isLoggedIn ? <Live /> : <Navigate to="/login" replace />}
-            />
-            <Route
-              path="/cremoteca"
-              element={isLoggedIn ? <Cremoteca /> : <Navigate to="/login" replace />}
-            />
-            <Route
-              path="/eventi"
-              element={isLoggedIn ? <Eventi /> : <Navigate to="/login" replace />}
-            />
-            <Route
-              path="/quiz"
-              element={isLoggedIn ? <MyQuiz quizData={quiz} /> : <Navigate to="/login" replace />}
-            />
-
-          </Routes>
-        </AuthProvider>
+        <MyNavbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
+          {isLoggedIn ? (
+            <>
+              <Route path="/news" element={<News />} />
+              <Route path="/live" element={<Live />} />
+              <Route path="/cremoteca" element={<Cremoteca />} />
+              <Route path="/eventi" element={<Eventi />} />
+              <Route path="/quiz" element={<MyQuiz quizData={quiz} />} />
+            </>
+          ) : (
+            <>
+              <Route path="/news" element={<Login />} />
+              <Route path="/live" element={<Login />} />
+              <Route path="/cremoteca" element={<Login />} />
+              <Route path="/eventi" element={<Login />} />
+              <Route path="/quiz" element={<Login />} />
+            </>
+          )}
+        </Routes>
         <MyFooter />
       </div>
     </Router>

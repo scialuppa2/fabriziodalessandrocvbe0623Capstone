@@ -57,17 +57,20 @@ body {
 h1,
 h2, h3 {
   color: azure;
-  text-shadow: 1px 1px 1px rgba(179, 3, 3, 1);
+  text-shadow: 1px 1px 1px rgba(2, 1, 32, 1);
   margin: 10px;
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 64px;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 38px;
+}
+h3{
+  font-size: 30px;
 }
 
 
@@ -81,10 +84,13 @@ a:hover {
 
 .card {
   background-color: rgba(2, 1, 32, 0.753);
-  box-shadow: 3px 3px 3px rgba(179, 3, 3, 1);
+  box-shadow: 2px 2px 2px rgba(179, 3, 3, 1);
   border-radius: 5%;
   color: azure;
   text-align: center;
+}
+.nws-card{
+  background-color: rgb(2, 1, 32);
 }
 
 .social-links p {
@@ -122,13 +128,14 @@ a:hover {
 
 .imgNws-card {
   width: 100%;
-  height: 8rem;
+  height: 16rem;
+  border-radius: 2%;
 }
 
 .imgTour-card {
   width: 100%;
   height: 12rem;
-  border: 3px ridge red;
+  border: 2px ridge red;
   cursor: pointer;
 }
 

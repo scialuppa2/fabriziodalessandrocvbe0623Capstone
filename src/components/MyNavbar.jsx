@@ -4,7 +4,7 @@ import '../App.css';
 import { AuthContext } from '../context/AuthContext';
 
 function MyNavbar() {
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn, user } = useContext(AuthContext); // Aggiungi user al contesto di autenticazione
   const navigate = useNavigate(); // Hook per la navigazione
 
   useEffect(() => {
@@ -15,13 +15,23 @@ function MyNavbar() {
   }, [setIsLoggedIn]);
 
   const handleLogout = () => {
-    // Effettua il logout impostando isAuthenticated su false
+    // Effettua il logout impostando isLoggedIn su false
     setIsLoggedIn(false);
-    // Rimuovi il token di accesso dal localStorage o da qualsiasi altra soluzione di archiviazione che stai usando
+    
+    // Rimuovi il token di accesso dal localStorage
     localStorage.removeItem('accessToken');
+    
+    // Rimuovi eventuali altre informazioni sull'utente memorizzate nel localStorage
+    localStorage.removeItem('user');
+  
+    // Salva lo stato di autenticazione aggiornato nel localStorage
+    localStorage.setItem('isLoggedIn', false);
+  
     // Reindirizza l'utente alla pagina di login o alla home
-    navigate('/login');
+    navigate('/home');
   };
+  
+  
 
   return (
     <nav className="navbar navbar-dark navbar-expand-md p-0">
@@ -53,10 +63,15 @@ function MyNavbar() {
             )}
           </ul>
         </div>
-        <div className='d-flex'>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-  <span className="navbar-toggler-icon"></span>
-</button>
+        <div className='d-flex align-items-center'>
+          {/* Visualizza il saluto accanto al pulsante di logout */}
+          {isLoggedIn && user && (
+            <span className="text-light me-3">Ciao, {user ? user.Nome : 'Utente'}<i className="fa fa-user m-2"></i></span>
+          )}
+
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
 
           {isLoggedIn ? (

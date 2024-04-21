@@ -4,6 +4,20 @@ import Quiz from 'react-quiz-component';
 const MyQuiz = ({ quizData }) => {
   const [showQuiz, setShowQuiz] = useState(true); // Stato per controllare la visualizzazione del quiz
   const [quizResults, setQuizResults] = useState(null); // Stato per memorizzare i risultati del quiz
+  const [audioPlayed, setAudioPlayed] = useState(false);
+
+  const handleToggleAudio = () => {
+    const audio = document.getElementById('audio');
+    if (audio) {
+      if (audioPlayed) {
+        audio.pause();
+        audio.currentTime = 0;
+      } else {
+        audio.play();
+      }
+      setAudioPlayed(!audioPlayed); // Inverte lo stato della riproduzione audio
+    }
+  };
 
   // Funzione per gestire il completamento del quiz e la memorizzazione dei risultati
   const handleQuizCompletion = (obj) => {
@@ -21,6 +35,13 @@ const MyQuiz = ({ quizData }) => {
   return (
     <>
       <h1 className='text-center'>Since1999 quiz!</h1>
+      {/* Pulsante per la musica */}
+      <div className="d-flex align-items-center text-light m-3">
+        <h6>Cercando Camilla <i class="fas fa-music m-1"></i></h6>
+        <button onClick={handleToggleAudio} className="btn button py-2">
+          <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
+        </button>
+      </div>
       <div className='d-flex justify-content-center'>
         {/* Visualizza il componente Quiz solo se showQuiz è true */}
         {showQuiz && (
@@ -46,6 +67,10 @@ const MyQuiz = ({ quizData }) => {
             <button className='btn button' onClick={handleRestartQuiz}>Restart Quiz</button>
           </div>
         )}
+        <audio id="audio">
+        <source src="CercandoCamilla.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       </div>
     </>
   );

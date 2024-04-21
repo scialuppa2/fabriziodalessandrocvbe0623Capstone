@@ -68,16 +68,6 @@ const Cremoteca = () => {
     }
   };
 
-  const handleProgressClick = (event, index) => {
-    const progressBar = document.getElementById(`prog-bar-${index}`);
-    const rect = progressBar.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const width = progressBar.clientWidth;
-    const seekTime = (x / width) * songs[index].duration;
-    const audio = document.getElementById(`audio-${index}`);
-    audio.currentTime = seekTime;
-  };
-
   // Funzione per tornare all'inizio della pagina
   const scrollToTop = () => {
     window.scrollTo({
@@ -102,7 +92,7 @@ const Cremoteca = () => {
                   </div>
                   <div className="card-body d-flex flex-column justify-content-between">
                     <h6 className="card-title">{song.title}</h6>
-                    <div className="prog" id={`prog-bar-${index}`} onClick={(event) => handleProgressClick(event, index)}>
+                    <div className="prog" id={`prog-bar-${index}`} onClick={(event) => {}}>
                       <div className="prog-bar">
                         <div className="prog-bar-inner"></div>
                       </div>
@@ -126,7 +116,7 @@ const Cremoteca = () => {
       </div>
       {/* Torna su */}
       <div className="scroll-to-top d-flex justify-content-center">
-        <button className='button' onClick={scrollToTop}>Torna su</button>
+        <button className='btn button' onClick={scrollToTop}>Torna su</button>
       </div>
     </div>
   );

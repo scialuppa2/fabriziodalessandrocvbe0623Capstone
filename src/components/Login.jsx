@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
-  const { setIsLoggedIn } = useContext(AuthContext);
+  const { setIsLoggedIn, login } = useContext(AuthContext);
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
@@ -22,11 +22,13 @@ const Login = () => {
         },
         body: JSON.stringify(credentials),
       });
-
+  
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('accessToken', data.token);
-        setIsLoggedIn(true); // Aggiorna lo stato di autenticazione
+        if (data.userId) {
+          login(data.token, data.userId); // Passa l'ID dell'utente alla funzione login
+        }
         navigate('/home');
       } else {
         console.error('Errore durante il login');
@@ -35,7 +37,7 @@ const Login = () => {
       console.error('Errore durante il login:', error);
     }
   };
-
+  
 
   return (
     <div className='login'>

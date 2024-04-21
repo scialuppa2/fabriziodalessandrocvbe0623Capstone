@@ -7,6 +7,20 @@ const Eventi = () => {
     const [loading, setLoading] = useState(true); // Aggiungi lo stato per gestire il caricamento
     const [modalData, setModalData] = useState(null); // Stato per i dati del modale
     const [modalOpen, setModalOpen] = useState(false); // Stato per gestire l'apertura e la chiusura del modale
+    const [audioPlayed, setAudioPlayed] = useState(false);
+
+    const handleToggleAudio = () => {
+        const audio = document.getElementById('audio');
+        if (audio) {
+            if (audioPlayed) {
+                audio.pause();
+                audio.currentTime = 0;
+            } else {
+                audio.play();
+            }
+            setAudioPlayed(!audioPlayed); // Inverte lo stato della riproduzione audio
+        }
+    };
 
 
     // Effettua la chiamata API una volta che il componente è montato
@@ -84,6 +98,13 @@ const Eventi = () => {
         <div>
             <h1 className="text-center">Eventi in calendario</h1>
             <div className='design-section'>
+                {/* Pulsante per la musica */}
+                <div className="d-flex align-items-center text-light">
+                    <h6>Interlude <i className="fas fa-music m-1"></i></h6>
+                    <button onClick={handleToggleAudio} className="btn button py-2">
+                        <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
+                    </button>
+                </div>
                 <div className="custom-timeline">
                     {eventi.sort((a, b) => new Date(a.Data) - new Date(b.Data)).map((evento, index) => (
                         <div key={evento.EventiID} className={`timeline-item ${index % 2 === 0 ? 'even' : 'odd'} ${index % 2 === 0 ? '' : 'reverse'}`}>
@@ -103,6 +124,10 @@ const Eventi = () => {
             </div>
             {/* Modale */}
             {renderModal()}
+            <audio id="audio">
+                <source src="Interlude-.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
             {/* Torna su */}
             <div className="scroll-to-top d-flex justify-content-center">
                 <button className='btn button' onClick={scrollToTop}>Torna su</button>

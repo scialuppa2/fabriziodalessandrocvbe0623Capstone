@@ -4,7 +4,7 @@ import SocialLink from './SocialLink';
 const SocialLinks = () => {
   return (
     <div className="social-links text-center">
-      <h2>Segui le nostre pagine</h2>
+      <h2>Segui le nostre Fanpage</h2>
       <div className='row justify-content-center'>
         <div className='col-sm-6 col-xl-3 my-2'>
           <div className='d-flex align-items-center justify-content-evenly'>

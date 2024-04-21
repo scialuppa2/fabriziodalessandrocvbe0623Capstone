@@ -5,6 +5,20 @@ import TourIndoor2022 from './TourIndoor2022';
 const Live = () => {
   const [selectedTour, setSelectedTour] = useState(null);
   const selectedTourRef = useRef(null);
+  const [audioPlayed, setAudioPlayed] = useState(false);
+
+  const handleToggleAudio = () => {
+    const audio = document.getElementById('audio');
+    if (audio) {
+      if (audioPlayed) {
+        audio.pause();
+        audio.currentTime = 0;
+      } else {
+        audio.play();
+      }
+      setAudioPlayed(!audioPlayed); // Inverte lo stato della riproduzione audio
+    }
+  };
 
   const handleTourSelection = (tourType) => {
     setSelectedTour(tourType);
@@ -41,6 +55,17 @@ const Live = () => {
           />
         </div>
       </div>
+      {/* Pulsante per la musica */}
+      <div className="d-flex align-items-center text-light">
+        <h6>Delfini <i className="fas fa-music m-1"></i></h6>
+        <button onClick={handleToggleAudio} className="btn button py-2">
+          <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
+        </button>
+      </div>
+      <audio id="audio">
+        <source src="Delfini.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       {/* Mostra il componente selezionato in base al tour scelto */}
       <div className="col-md-12 mt-4" ref={selectedTourRef}>
         {selectedTour === 'stadi' && <TourStadi2022 />}
