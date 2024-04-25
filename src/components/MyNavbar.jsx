@@ -66,7 +66,7 @@ function MyNavbar() {
         <div className='d-flex align-items-center'>
           {/* Visualizza il saluto accanto al pulsante di logout */}
           {isLoggedIn && user && (
-            <span className="text-light me-3">Ciao, {user ? user.Nome : 'Utente'}<i className="fa fa-user m-2"></i></span>
+            <Link to="/profilepage" className="nav-link m-3">Ciao, {user ? user.Nome : 'Utente'}<img className='imgIcon' src={`api/${user.ProfileImage}`} alt="Immagine del profilo" /></Link>
           )}
 
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

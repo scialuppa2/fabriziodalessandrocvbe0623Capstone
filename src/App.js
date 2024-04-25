@@ -12,6 +12,7 @@ import Live from './components/Live';
 import Eventi from './components/Eventi';
 import MyQuiz from './components/Quiz';
 import { quiz } from './quizData';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext); // Ottenere lo stato di autenticazione dal contesto
@@ -32,6 +33,7 @@ function App() {
               <Route path="/cremoteca" element={<Cremoteca />} />
               <Route path="/eventi" element={<Eventi />} />
               <Route path="/quiz" element={<MyQuiz quizData={quiz} />} />
+              <Route path="/profilepage" element={<ProfilePage />} />
             </>
           ) : (
             <>

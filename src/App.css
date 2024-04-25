@@ -27,7 +27,7 @@ body {
 }
 
 .modal {
-  background: #f8f8f8ac;
+  background: rgba(3, 1, 64, 0.753);
 }
 
 .logo-img {
@@ -113,7 +113,36 @@ a:hover {
   text-align: center;
 }
 
+/*Profilo*/
+.profileContainer{
+  display: flex;
+  justify-content: space-around;
+  max-width: 50rem;
+  height: auto;
+  background: rgba(2, 1, 32, 1);
+  box-shadow: 2px 2px 2px rgba(179, 3, 3, 1);
+  color: azure;
+  padding: 2rem;
+  transition: 0.4s ease;
+  margin: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+@media screen and (max-width: 768px) {
+  .profileContainer{
+    flex-direction: column;
+    align-items: center;
+  }
+}
 /*Immagini*/
+.imgIcon{
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px ridge rgba(179, 3, 3, 1);
+  border-radius: 50%;
+  margin: 5px;
+
+}
 .img-card {
   width: 85%;
   border: 2px ridge rgba(179, 3, 3, 1);
@@ -135,14 +164,14 @@ a:hover {
 .imgTour-card {
   width: 100%;
   height: 12rem;
-  border: 2px ridge red;
+  border: 2px ridge rgba(179, 3, 3, 1);
   cursor: pointer;
 }
 
 .imgEvent-card {
   width: 100%;
   height: 16rem;
-  border: 3px ridge red;
+  border: 3px ridge rgba(179, 3, 3, 1);
   cursor: pointer;
   border-radius: 10%;
 }
@@ -150,8 +179,13 @@ a:hover {
 .imgHome-card {
   width: 100%;
   height: auto;
-  border: 3px ridge red;
+  border: 3px ridge rgba(179, 3, 3, 1);
   box-shadow: 3px 3px 3px black;
+}
+.imgProfile-card{
+  width: 16rem;
+  height: 16rem;
+  border: 2px ridge rgba(179, 3, 3, 1);
 }
 
 .prog {
@@ -346,7 +380,7 @@ label{
 
 @media screen and (max-width: 550px) {
   .timeline-content {
-    width: 22em;
+    width: 21.5em;
   }
 
   .design-section {

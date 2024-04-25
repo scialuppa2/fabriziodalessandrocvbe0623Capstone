@@ -36,6 +36,13 @@ const Live = () => {
     <div className="container">
       <h1 className="text-center">LIVE TOURS</h1>
       <div className="row justify-content-around">
+        {/* Pulsante per la musica */}
+      <div className="d-flex align-items-center text-light my-4">
+        <h6>Delfini <i className="fas fa-music m-1"></i></h6>
+        <button onClick={handleToggleAudio} className="btn button py-2">
+          <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
+        </button>
+      </div>
         {/* Immagine per il tour degli stadi */}
         <div className="col-sm-6 col-md-4 m-1">
           <img
@@ -55,13 +62,7 @@ const Live = () => {
           />
         </div>
       </div>
-      {/* Pulsante per la musica */}
-      <div className="d-flex align-items-center text-light">
-        <h6>Delfini <i className="fas fa-music m-1"></i></h6>
-        <button onClick={handleToggleAudio} className="btn button py-2">
-          <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
-        </button>
-      </div>
+      
       <audio id="audio">
         <source src="Delfini.mp3" type="audio/mpeg" />
         Your browser does not support the audio element.

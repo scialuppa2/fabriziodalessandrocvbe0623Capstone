@@ -37,7 +37,7 @@ const MyQuiz = ({ quizData }) => {
       <h1 className='text-center'>Since1999 quiz!</h1>
       {/* Pulsante per la musica */}
       <div className="d-flex align-items-center text-light m-3">
-        <h6>Cercando Camilla <i class="fas fa-music m-1"></i></h6>
+        <h6>Cercando Camilla <i className="fas fa-music m-1"></i></h6>
         <button onClick={handleToggleAudio} className="btn button py-2">
           <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
         </button>

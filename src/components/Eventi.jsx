@@ -105,7 +105,7 @@ const Eventi = () => {
                         <i className={`fas ${audioPlayed ? 'fa-pause' : 'fa-play'} fa-lg`} aria-hidden="true"></i>
                     </button>
                 </div>
-                <div className="custom-timeline">
+                <div className="custom-timeline my-5">
                     {eventi.sort((a, b) => new Date(a.Data) - new Date(b.Data)).map((evento, index) => (
                         <div key={evento.EventiID} className={`timeline-item ${index % 2 === 0 ? 'even' : 'odd'} ${index % 2 === 0 ? '' : 'reverse'}`}>
                             <div className="date-square">
