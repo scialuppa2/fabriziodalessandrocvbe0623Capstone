@@ -30,4 +30,4 @@ Per il corretto funzionamento dell'applicazione, assicurati di avere installate 
 - react-router-dom
 - react-fontawesome
 
-<img src="logo_since1999.png" />
+<img src="/public/logo_since1999.png" />
