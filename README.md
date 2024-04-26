@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+Since1999
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Since1999 è una fan-zone dedicata a Cesare Cremonini, progettata per i suoi fan storici. L'applicazione offre una piattaforma interattiva dove i fan possono accedere a una varietà di contenuti, inclusi aggiornamenti sulle news, informazioni sui concerti passati, accesso alla "Cremoteca" dei brani più famosi, calendario degli eventi futuri e sfide quiz.
 
-## Available Scripts
+Tecnologie Utilizzate
 
-In the project directory, you can run:
+- SQL Server per il database
+- ASP.NET per il lato server
+- React JS per il frontend
 
-### `npm start`
+Requisiti
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Assicurati di avere installato Node.js e npm sul tuo sistema prima di continuare.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Installazione
 
-### `npm test`
+Per installare e avviare l'applicazione sul tuo computer locale, segui i seguenti passaggi:
+1) Clona la repository sul tuo computer;
+2) Entra nella directory del progetto;
+3) Installa le dipendenze React necessarie utilizzando npm;
+4) Avvia l'applicazione.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+L'applicazione verrà avviata e potrai accedervi nel tuo browser all'indirizzo http://localhost:3000.
 
-### `npm run build`
+Dipendenze React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Per il corretto funzionamento dell'applicazione, assicurati di avere installate le seguenti dipendenze React:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- react-bootstrap
+- react-router-dom
+- react-fontawesome
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="logo_since1999.png" />
