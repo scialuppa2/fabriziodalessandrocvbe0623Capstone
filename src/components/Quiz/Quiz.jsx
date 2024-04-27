@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Quiz from 'react-quiz-component';
+import './Quiz.css';
 
 const MyQuiz = ({ quizData }) => {
   const [showQuiz, setShowQuiz] = useState(true); // Stato per controllare la visualizzazione del quiz

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Spinner from './Spinner'; // Importa il componente Spinner
+import Spinner from '../Spinner';
 
-function TourStadi2022() {
-  const [tourStadi, setTourStadi] = useState([]);
+function TourIndoor2022() {
+  const [tourIndoor, setTourIndoor] = useState([]);
   const [loading, setLoading] = useState(true); // Aggiungi lo stato per gestire il caricamento
   const [modalData, setModalData] = useState(null); // Stato per i dati del modale
   const [modalOpen, setModalOpen] = useState(false); // Stato per gestire l'apertura e la chiusura del modale
 
   useEffect(() => {
-    axios.get('https://localhost:44314/api/TourStadi2022')
+    axios.get('https://localhost:44314/api/TourIndoor2022')
       .then(response => {
-        setTourStadi(response.data);
+        setTourIndoor(response.data);
         setLoading(false); // Imposta lo stato di caricamento su false quando i dati sono stati recuperati
       })
       .catch(error => {
@@ -40,7 +40,6 @@ function TourStadi2022() {
       behavior: "smooth"
     });
   };
-
 
   // Mostra lo spinner durante il caricamento dei dati
   if (loading) {
@@ -75,10 +74,10 @@ function TourStadi2022() {
 
   return (
     <div>
-      <h1 className="text-center">Stadi 2022</h1>
+      <h1 className="text-center">Palazzetti 2022</h1>
       <div className="container">
         <div className="row">
-          {tourStadi.map(tour => (
+          {tourIndoor.map(tour => (
             <div key={tour.ConcertID} className="col-sm-12 col-md-6 col-xl-4 mb-4 d-flex justify-content-center">
               <div style={{ width: '20rem', height: '24rem' }} className="card" onClick={() => openModal(tour)}>
                 <div className='d-flex align-items-center justify-content-center my-2'>
@@ -103,7 +102,6 @@ function TourStadi2022() {
       </div>
     </div>
   );
-
 }
 
-export default TourStadi2022;
+export default TourIndoor2022;

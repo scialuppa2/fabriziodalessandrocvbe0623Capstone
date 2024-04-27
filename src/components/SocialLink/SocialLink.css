@@ -1,0 +1,10 @@
+.social-links p {
+    font-size: 22px;
+    color: azure;
+    text-shadow: 2px 2px 2px black;
+    margin: 1rem;
+  }
+  
+  .social-logo:hover {
+    transform: translate3d(0, 3px, 0);
+  }

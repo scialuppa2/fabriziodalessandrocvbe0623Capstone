@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Spinner from './Spinner';
+import Spinner from '../Spinner';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 
 const News = () => {

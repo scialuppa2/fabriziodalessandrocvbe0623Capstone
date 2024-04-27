@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthContext } from './context/AuthContext';
-import MyNavbar from './components/MyNavbar';
-import MyFooter from './components/MyFooter';
-import Home from './components/Home';
-import Registration from './components/Registration';
-import Login from './components/Login';
-import News from './components/News';
-import Cremoteca from './components/Cremoteca';
-import Live from './components/Live';
-import Eventi from './components/Eventi';
-import MyQuiz from './components/Quiz';
+import MyNavbar from './components/MyNavbar/MyNavbar';
+import MyFooter from './components/MyFooter/MyFooter';
+import Home from './components/Home/Home';
+import Registration from './components/Registration/Registration';
+import Login from './components/Login/Login';
+import News from './components/News/News';
+import Cremoteca from './components/Cremoteca/Cremoteca';
+import Live from './components/Live/Live';
+import Eventi from './components/Eventi/Eventi';
+import MyQuiz from './components/Quiz/Quiz';
 import { quiz } from './quizData';
-import ProfilePage from './components/ProfilePage';
+import ProfilePage from './components/ProfilePage/ProfilePage';
 
 function App() {
   const { isLoggedIn } = useContext(AuthContext); // Ottenere lo stato di autenticazione dal contesto

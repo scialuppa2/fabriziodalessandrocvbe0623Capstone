@@ -1,0 +1,127 @@
+/*Polaroid*/
+.polaroid-section {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 50rem;
+  }
+  .photo-gallery{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  
+  .photo {
+    position: absolute;
+    background-color: azure;
+    width: 22rem;
+    height: auto;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    margin: 5rem;
+    z-index: 1;
+  }
+  
+  .photo:nth-last-of-type(4n+1) {
+    transform: scale(0.8, 0.8) rotate(-5deg);
+    transition: all 0.35s;
+    top: 26rem;
+    left: 9rem;
+    z-index: 4;
+  }
+  .photo:nth-last-of-type(4n+2) {
+    transform: scale(0.8, 0.8) rotate(-5deg);
+    transition: all 0.35s;
+    top: -2rem;
+    left: 3rem;
+    z-index: 4;
+  }
+  .photo:nth-last-of-type(4n+3) {
+    transform: scale(0.8, 0.8) rotate(3deg);
+    transition: all 0.35s;
+    top: 22rem;
+    left: -8rem;
+    z-index: 3;
+  }
+  .photo:nth-last-of-type(4n+4) {
+    transform: scale(0.8, 0.8) rotate(3deg);
+    transition: all 0.35s;
+    top: 1rem;
+    left: -7rem;
+    
+  }
+  .photo:nth-last-of-type(4n+5) {
+    transform: scale(0.8, 0.8) rotate(7deg);
+    transition: all 0.35s;
+    top: 1rem;
+    left: 17rem;
+  }
+  .photo:nth-last-of-type(4n+6) {
+    transform: scale(0.8, 0.8) rotate(4deg);
+    transition: all 0.35s;
+    top: 15rem;
+    left: 14rem;
+    z-index: 2;
+  }
+  .photo:nth-last-of-type(4n+7) {
+    transform: scale(0.8, 0.8) rotate(-4deg);
+    transition: all 0.35s;
+    top: 12rem;
+    left: -9rem;
+  }
+  .photo:nth-last-of-type(4n+8) {
+    transform: scale(0.8, 0.8) rotate(4deg);
+    transition: all 0.35s;
+    top: 12rem;
+    left: 1rem;
+    z-index: 3;
+  }
+  .photo img {
+    width: 100%;
+    height: auto;
+  }
+  /* Media query per rendere il layout più responsive */
+  @media screen and (max-width: 1080px) {
+    .polaroid-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra gli elementi lungo l'asse orizzontale */
+      height: auto;
+    }
+    
+    /* Rimuovi tutte le proprietà della galleria */
+    .photo-gallery {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 3rem;
+    }
+  
+    .photo {
+      background-color: azure;
+      width: 18rem;
+      height: auto;
+      padding: 0.5rem;
+      padding-bottom: 2rem;
+      margin: 1rem;
+      position: static;
+    }
+    .photo:nth-child(even) {
+      transform: rotate(2deg);
+    }
+    .photo:nth-child(odd) {
+      transform: rotate(-2deg);
+    }
+  
+    .no-cell{
+      display: none;
+    }
+  
+  }
+  @media screen and (max-width: 550px){
+    .photo{
+      width: 19rem;
+    }
+  }
+  
+  

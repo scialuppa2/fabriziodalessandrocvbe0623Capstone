@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialLink from './SocialLink';
+import './SocialLink.css';
 
 const SocialLinks = () => {
   return (

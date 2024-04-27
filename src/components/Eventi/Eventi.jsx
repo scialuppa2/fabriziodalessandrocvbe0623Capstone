@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Spinner from './Spinner';
+import Spinner from '../Spinner';
+import './Eventi.css';
 
 const Eventi = () => {
     // Stato per memorizzare gli eventi ottenuti dalla chiamata API

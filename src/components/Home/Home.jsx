@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SocialLinks from './SocialLinks';
-import { AuthContext } from '../context/AuthContext';
+import SocialLinks from '../SocialLink/SocialLinks';
+import { AuthContext } from '../../context/AuthContext';
+import './Home.css';
 
 
 const Home = () => {

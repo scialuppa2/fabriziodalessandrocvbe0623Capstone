@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../App.css';
-import { AuthContext } from '../context/AuthContext';
+import '../../App.css';
+import './MyNavbar.css';
+import { AuthContext } from '../../context/AuthContext';
 
 function MyNavbar() {
   const { isLoggedIn, setIsLoggedIn, user } = useContext(AuthContext); // Aggiungi user al contesto di autenticazione

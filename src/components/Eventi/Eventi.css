@@ -1,0 +1,73 @@
+/*Eventi*/
+.design-section {
+    color: azure;
+    padding: 40px;
+  }
+  
+  .custom-timeline {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .timeline-item {
+    display: flex;
+  }
+  
+  .reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  @media screen and (max-width: 700px) {
+  
+    .timeline-item,
+    .reverse {
+      flex-direction: column;
+    }
+  }
+  
+  
+  .timeline-content {
+    width: 28em;
+    height: auto;
+    background: rgba(2, 1, 32, 1);
+    box-shadow: 2px 2px 2px rgba(179, 3, 3, 1);
+    color: azure;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+    margin: 1rem;
+    margin-bottom: 20px;
+    border-radius: 6px;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .timeline-content {
+      width: 18em;
+    }
+  
+    .design-section {
+      padding: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .timeline-content {
+      width: 21.5em;
+    }
+  
+    .design-section {
+      padding: 20px;
+    }
+  }
+  
+  .date-square {
+    display: flex;
+    align-items: center;
+  }
+  
+  .data-box {
+    font-size: 32px;
+    box-shadow: 1px 1px 1px rgba(179, 3, 3, 1);
+    border-radius: 5px;
+    cursor: pointer;
+  }
